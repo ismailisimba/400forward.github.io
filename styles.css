@@ -53,6 +53,7 @@ nav ul{
     letter-spacing: 1.69px;
     flex-flow: row;
     justify-content: space-evenly;
+    transition: all .69s ease-in;
     align-items: center;
     background-color: transparent;
 }
@@ -132,7 +133,7 @@ section.child object{
 #why p, #what p{
     font-size: 1.6rem !important;
 }
-#why h1, #what h1{
+#why h1, #what h1,.h1{
     font-size: 2.69rem;
 }
 footer{
@@ -205,11 +206,111 @@ nav .mobimg{
 }
 
 
+.contactformdiv {
+    width: 56%;
+    height: auto;
+    background-color: transparent;
+    box-sizing: border-box;
+    margin: 12px 36px 12px 3px;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
 
+.formitemdiv p {
+    margin-block-start: 6px;
+    margin-block-end: 6px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 1.3px;
+}
+
+.formitemdiv textarea {
+    min-width: 99px;
+    height: 36px;
+    overflow: hidden;
+    resize: none;
+    padding: 8px 6px 0px 6px;
+    margin-bottom: 3px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+    font-size: 14px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-y: scroll;
+}
+
+.simplecaptchamom {
+    display: flex;
+    position: relative;
+    width: 169px;
+    height: 69px;
+    background-color: white;
+    color: white;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.captchaitems {
+    position: relative;
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    width: 33px;
+    height: 33px;
+    margin: 3px 3px;
+    box-sizing: border-box;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.captchaitems:nth-child(5) {
+    overflow: hidden;
+    resize: none;
+    padding: 3px 3px 3px 3px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-weight: bold;
+    letter-spacing: .69px;
+    font-size: 16px !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-y: scroll;
+}
+.simplecaptchamom textarea {
+    width: 33px !important;
+    min-width: 33px !important;
+}
+
+#contactmessage {
+    width: 100%;
+    height: 269px;
+}
 
 
 
 @media screen and (max-width: 969px) {
+    section.mainmom{
+        left: -2%;
+        overflow-x: hidden;
+    }
+    .childdiv p {
+        font-size: 1.3rem;
+    }
+    #why p, #what p {
+        font-size: 1.169rem !important;
+    }
     nav ul{
         display: flex;
         position: absolute;
@@ -234,5 +335,41 @@ nav .mobimg{
         left: unset !important;
         z-index: 3;
     }
-    
+
+    section.child{
+        flex-flow: column;
+        justify-content: space-around;
+        align-items: center;
+        overflow-x: hidden;
+        border-bottom:.69px #000 dotted;
+    }
+    section.child .childdiv{
+        width: 80%;
+    }
+    .title{
+        width: 80%;
+        left: 10%;
+    }
+    footer ul.social, ul.contaddr, ul.foototh {
+        width: 100%;
+        flex-flow: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    footer ul.contaddr,footer ul.foototh {
+        position: relative;
+        right: 0px;
+        margin-top: 16px;
+        line-height: 18px;
+        top: 0px;
+    }
+    section.child:last-child{
+        padding-bottom: 69px;
+    }
+    footer{
+        width: 100%;
+        left: -8px;
+        position: relative;
+        overflow-x: hidden;
+    }
   }
