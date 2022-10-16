@@ -89,11 +89,11 @@ class cosmetics {
         function funcToHook(resObj){
             resObj=JSON.parse(resObj);
           let mom = document.querySelectorAll(".simplecaptchamom")[0];
-          let name = document.getElementById("contactname");
-          let email = document.getElementById("contactemail");
-          let message = document.getElementById("contactmessage");
+          let name = document.getElementById("contactname").value;
+          let email = document.getElementById("contactemail").value;
+          let message = document.getElementById("contactmessage").value;
           console.log(resObj)
-          if(resObj.status==="pass"&&name.value.length>3&&email.value.length>6&&message.value.length>9){
+          if(resObj.status==="pass"&&name.length>3&&email.length>6&&message.length>9){
         
             mom.innerHTML = "";
             mom.style.backgroundColor = "green";
@@ -101,7 +101,30 @@ class cosmetics {
             mom.innerHTML = "Success!"
         
             let tempyTimy = window.setTimeout(function(){
-              sendAStrangersHail();
+                    //animeC.startload("sending...");
+                    //e.preventDefault();
+                    //e.stopPropagation();
+                   // const form = e.composedPath()[2];
+                    //const name = form[0].value;
+                    //const number = form[1].value;
+                    //const email = form[2].value;
+                    //const websiteurl = form[3].value;
+                    //const message = `Website : ${websiteurl}<br>${form[4].value}`;
+                    obj.params[0].dataObj = {name,email,message}
+                
+                       tmp.s1.startFetch(
+                          JSON.stringify(obj),
+                          `?paraOne=400email`,
+                          tmp.s1.emailURL,
+                          "POST",
+                          ()=>{
+                            alert("Email Sent!");
+                            window.location.reload();
+                          }
+                          )
+                  
+                
+                  
               window.clearTimeout(tempyTimy);
             },690);
           }else{
@@ -113,6 +136,8 @@ class cosmetics {
         }
     }
 }
+
+
 
 const svGStuff = () => {
     const svGG = document.getElementById("svg1");

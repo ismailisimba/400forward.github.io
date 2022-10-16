@@ -5,7 +5,7 @@ const artPicURL = (id)=>{
   return `https://www.artic.edu/iiif/2/${id}/full/843,/0/default.jpg`;
 };
 const captchaURL = "https://script.google.com/macros/s/AKfycbyAl44CwyGcvrxb_YWYx0Fd2QKLjThO3WUNNo8Yg3W4P_YJDDEXSr9kOA/exec";
-const emailURL = "https://script.google.com/macros/s/AKfycbw39czh1LjMDSNlVJjUueIwwLMSfzfyBMrzmEPaPeqXfs3UzCDdKSDqtFds7fhA_IPQ/exec?paraOne=makiwutwut"
+const emailURL = "https://script.google.com/macros/s/AKfycbw39czh1LjMDSNlVJjUueIwwLMSfzfyBMrzmEPaPeqXfs3UzCDdKSDqtFds7fhA_IPQ/exec"
 class server {
     
     constructor(){
