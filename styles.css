@@ -93,6 +93,9 @@ section.child object{
     height: 420px !important;
     margin: 0 auto;
 }
+.h1{
+    width: 269px;
+}
 .title{
     position: absolute;
     user-select: none;

@@ -19,7 +19,7 @@ const obj = {
   const string1 = (()=>{
     const string = {"str":""};
     if(window.location.hostname.includes("ismailisimba.github.io")){
-      string.str = "/400forward.github.io/";
+      string.str = "/400forward.github.io";
     }else if(window.location.hostname.includes("127.0.0.1")){
       string.str = "/fourhundrforw";
     }else{
