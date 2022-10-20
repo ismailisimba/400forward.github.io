@@ -2,9 +2,14 @@
 
 html{
     font-family: 'Merriweather', serif;
+    width: 100%;
+    box-sizing: border-box;
     font-size: 12px;
     letter-spacing: 1.69px;
+    overflow-x: hidden;
 }
+
+
 html ul{
     list-style-type: none;
     margin-block-start: 0px;
@@ -22,6 +27,8 @@ body{
 }
 header{
     z-index: 2;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 nav{
@@ -62,15 +69,24 @@ section.mainmom{
     position: relative;
     box-sizing: border-box;
     padding-bottom: 100px;
-    left: -1%;
+    left: 0px;
     top: 10vh;
     background-color: transparent;
-    width: 102%;
+    width: 100%;
     height: auto;
     z-index: 1;
 }
 section.child:first-child{
     background-color: #a2a9ad;
+}
+.childdivimg{
+    transition: all .69s ease-in-out !important;
+}
+.childdivimgright{
+    transform: translateX(100%);
+}
+.childdivimgleft{
+    transform: translateX(-100%);
 }
 section.child{
     display: flex;
@@ -86,15 +102,21 @@ section.child{
 }
 section.child .childdiv{
     width: 40%;
+    box-sizing: border-box;
 }
 
 section.child object{
     width: 100% !important;
+    box-sizing: border-box;
     height: 420px !important;
     margin: 0 auto;
 }
 .h1{
     width: 269px;
+    box-sizing: border-box;
+}
+#logo{
+    cursor: pointer;
 }
 .title{
     position: absolute;
@@ -104,6 +126,7 @@ section.child object{
     top: 12vh;
     left: 24vh;
     width: 48%;
+    box-sizing: border-box;
     max-width: 369px;
 
     margin-block-start: 0px;
@@ -124,6 +147,7 @@ section.child object{
 .title .minor{
     font-size: 1.3rem;
     width: 169px;
+    box-sizing: border-box;
 }
 .childdiv p{
     font-size: 2rem;
@@ -142,12 +166,13 @@ section.child object{
 footer{
     display: block;
     box-sizing: border-box;
-    padding-top: 36px;
+    padding-top: 24px;
     padding-bottom: 36px;
     position: fixed;
     left: -2%;
     bottom: 0px;
     width: 104%;
+    box-sizing: border-box;
     z-index: 3;
     background-color: #055106;
 }
@@ -166,6 +191,7 @@ footer a:hover{
 
 footer ul.social,ul.contaddr,ul.foototh{
     width: 50%;
+    box-sizing: border-box;
     display: flex;
     flex-flow: row;
     justify-content: space-evenly;
@@ -203,6 +229,7 @@ footer ul.contaddr a,footer ul.foototh a{
     font-size: .86rem;
     letter-spacing: 1.69px;
     width: 169px;
+    box-sizing: border-box;
 }
 nav .mobimg{
     display: none;
@@ -254,6 +281,7 @@ nav .mobimg{
     position: relative;
     width: 169px;
     height: 69px;
+    box-sizing: border-box;
     background-color: white;
     color: white;
     flex-flow: row;
@@ -296,9 +324,24 @@ nav .mobimg{
     min-width: 33px !important;
 }
 
+.formitemdiv textarea:focus, .simplecaptchamom textarea:focus {
+    background-color: #055106 !important;
+    color: #fff !important;
+}
+
 #contactmessage {
     width: 100%;
     height: 269px;
+    box-sizing: border-box;
+}
+
+/*Hide the scrollbar*/
+.containerFAKE, .captchaitems, textarea {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.containerFAKE::-webkit-scrollbar, .captchaitems::-webkit-scrollbar, textarea::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 
@@ -374,5 +417,11 @@ nav .mobimg{
         left: -8px;
         position: relative;
         overflow-x: hidden;
+    }
+    .contactformdiv {
+        width: 84%;
+        flex-flow: column;
+        justify-content: space-around;
+        align-items: center;
     }
   }

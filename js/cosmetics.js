@@ -6,11 +6,15 @@ class cosmetics {
     constructor(server){
      this.svGStuff = svGStuff;
      this.mobMenuClicks = mobMenuClicks;
-     this.captcha = this.captcha; 
+     this.captcha = this.captcha;
+     this.homeAni = homeAni;
+     this.intersectAnime = intersectAnime; 
      this.serverC = server;
      tmp["s1"] = server;
      svGStuff();
      mobMenuClicks();
+     homeAni();
+     intersectAnime();
      this.captcha()
         
     }
@@ -162,6 +166,8 @@ const svGStuff = () => {
 
 const mobMenuClicks = () =>{
     const mobButt = document.querySelectorAll(".mobimg")[0];
+    const logo = document.getElementById("logo");
+    const y = document.getElementById("y");
     mobButt.addEventListener("click",(e)=>{
         const stat = e.target.getAttribute("alt");
         console.log(stat);
@@ -178,5 +184,81 @@ const mobMenuClicks = () =>{
             e.target.setAttribute("alt","closed");
         }
     })
+    logo.addEventListener("click",(e)=>{
+      if(window.location.pathname.includes("pages")){
+        window.location.href = "../";
+      }else{
+        window.location.href = "./";
+      }
+    })
+    y.addEventListener("click",(e)=>{
+      if(window.location.pathname.includes("pages")){
+        window.location.href = "../#newy";
+      }else{
+        window.location.href = "./#newy";
+      }
+    })
 }
+
+const homeAni = ()=>{
+  if(window.location.pathname.includes("pages")){
+    console.log("Not home page.");
+  }else{
+    console.log("Run Animation...");
+    document.querySelectorAll("#svg1")[0].addEventListener("load",homeAni);
+    const doc = document.querySelectorAll("#svg1")[0].getSVGDocument().querySelectorAll("path");
+    tmp["counterT"] = 0;
+    const inTerv = window.setInterval(()=>{
+      if(tmp.counterT>60){
+        tmp.counterT = 0;
+        resetSVGit(doc);
+      }else{
+        var r = doc[tmp.counterT]; // suppose our image contains a <rect>
+        loadSVGit(r);
+        tmp.counterT++;
+      }
+
+    },1692)
+  }
+
+}
+
+
+const loadSVGit =(r)=> {
+  r.setAttribute("fill", "#a2a9ad");
+  r.setAttribute("stroke", "#fff");
+   r.classList.remove("st0");
+  //r2.setAttribute("fill", "#fff");
+  }
+
+
+  const resetSVGit =(d)=> {
+   d.forEach(r=>{
+    r.setAttribute("fill", "#fff");
+    r.setAttribute("stroke", "#fff");
+    r.classList.add("st0");
+   })
+  }
+
+
+  const intersectAnime = () =>{
+    let options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.169
+    }
+    const intersectionCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transform = `translateX(0px)`;
+        }
+      });
+    }
+    let observer = new IntersectionObserver(intersectionCallback, options);
+    let target = document.querySelectorAll('.childdivimg');
+    target.forEach(t=>{
+      observer.observe(t);
+
+    })   
+  }
 
