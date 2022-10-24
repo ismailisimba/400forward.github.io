@@ -13,7 +13,8 @@ class cosmetics {
      tmp["s1"] = server;
      //svGStuff();
      mobMenuClicks();
-     homeAni();
+     document.querySelectorAll("#svg1")[0].addEventListener("load",homeAni);
+     //homeAni();
      intersectAnime();
      this.captcha()
         
@@ -205,7 +206,6 @@ const homeAni = ()=>{
     console.log("Not home page.");
   }else{
     console.log("Run Animation...");
-    document.querySelectorAll("#svg1")[0].addEventListener("load",homeAni);
     const doc = document.querySelectorAll("#svg1")[0].getSVGDocument().querySelectorAll("path");
     tmp["counterT"] = 0;
     const inTerv = window.setInterval(()=>{
