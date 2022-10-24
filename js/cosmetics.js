@@ -11,7 +11,7 @@ class cosmetics {
      this.intersectAnime = intersectAnime; 
      this.serverC = server;
      tmp["s1"] = server;
-     svGStuff();
+     //svGStuff();
      mobMenuClicks();
      homeAni();
      intersectAnime();
