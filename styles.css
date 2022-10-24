@@ -10,6 +10,8 @@ html{
 }
 
 
+
+
 html ul{
     list-style-type: none;
     margin-block-start: 0px;
@@ -22,6 +24,7 @@ body{
     box-sizing: border-box;
     width: 100%;
     height: 96vh;
+    margin:0px;
     background-color: transparent;
     overflow-x: hidden;
 }
@@ -348,7 +351,7 @@ nav .mobimg{
 
 @media screen and (max-width: 969px) {
     section.mainmom{
-        left: -2%;
+        left: 0px;
         overflow-x: hidden;
     }
     .childdiv p {
@@ -414,7 +417,7 @@ nav .mobimg{
     }
     footer{
         width: 100%;
-        left: -8px;
+        left: 0px;
         position: relative;
         overflow-x: hidden;
     }
