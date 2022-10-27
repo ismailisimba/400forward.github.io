@@ -6,9 +6,63 @@
 <style type="text/css">
 	.st0{fill:white;stroke:white;stroke-width:1;}
 	.st0:hover{fill:#055106;}
+	#TZ{fill:#055106;}
 </style>
+<script>
+    // <![CDATA[
+	var tmp = {};
+    window.addEventListener("DOMContentLoaded", () => {
+      console.log("hdvh");
+
+
+						const homeAni = ()=>{
+						if(window.location.pathname.includes("pages")){
+						console.log("Not home page.");
+						}else{
+						console.log("Run Animation...");
+						//const momSVG = document.querySelectorAll("#svg1")[0].getSVGDocument(); 
+						//const momSVG = this;
+						document.querySelectorAll("#TZ")[0].setAttribute("fill","#055106");
+						const doc = document.querySelectorAll("path");
+						tmp["counterT"] = 0;
+						const inTerv = window.setInterval(()=>{
+						if(tmp.counterT>60){
+						tmp.counterT = 0;
+						resetSVGit(doc);
+						}else{
+						var r = doc[tmp.counterT]; // suppose our image contains a <rect>
+						loadSVGit(r);
+						tmp.counterT++;
+						}
+
+						},1692)
+						}
+
+						}
+
+						const loadSVGit =(r)=> {
+						r.setAttribute("fill", "#a2a9ad");
+						r.setAttribute("stroke", "#fff");
+						r.classList.remove("st0");
+						//r2.setAttribute("fill", "#fff");
+						}
+
+
+						const resetSVGit =(d)=> {
+						d.forEach(r=>{
+						r.setAttribute("fill", "#fff");
+						r.setAttribute("stroke", "#fff");
+						r.classList.add("st0");
+						})
+						}
+
+
+		homeAni();
+    });
+    // ]]>
+  </script>
 <g class="mygsvg"
-fill="grey"
+	fill="grey"
     transform="translate(-1869 -1569)
                scale(4.6 4.6)">
 	<path id="AO" title="Angola" class="st0" d="M512.4,475.6L512.4,475.6l-0.4,0.2l-0.3,0.1l-0.4,0.5l-0.2,0.2l-0.1,0.1l-0.2,0.1l-0.1,0.1l0,0.1

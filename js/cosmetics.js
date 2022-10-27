@@ -7,14 +7,11 @@ class cosmetics {
      this.svGStuff = svGStuff;
      this.mobMenuClicks = mobMenuClicks;
      this.captcha = this.captcha;
-     this.homeAni = homeAni;
      this.intersectAnime = intersectAnime; 
      this.serverC = server;
      tmp["s1"] = server;
      //svGStuff();
      mobMenuClicks();
-     document.querySelectorAll("#svg1")[0].addEventListener("load",homeAni);
-     //homeAni();
      intersectAnime();
      this.captcha()
         
@@ -201,12 +198,15 @@ const mobMenuClicks = () =>{
     })
 }
 
-const homeAni = ()=>{
+const homeAni = (x)=>{
   if(window.location.pathname.includes("pages")){
     console.log("Not home page.");
   }else{
     console.log("Run Animation...");
-    const doc = document.querySelectorAll("#svg1")[0].getSVGDocument().querySelectorAll("path");
+    //const momSVG = document.querySelectorAll("#svg1")[0].getSVGDocument(); 
+    const momSVG = x;
+    momSVG.querySelectorAll("#TZ")[0].setAttribute("fill","#055106");
+    const doc = momSVG.querySelectorAll("path");
     tmp["counterT"] = 0;
     const inTerv = window.setInterval(()=>{
       if(tmp.counterT>60){
